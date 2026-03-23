@@ -1,0 +1,7 @@
+---
+- name: Prueba de conexion de Ansible
+  hosts: localhost
+  tasks:
+    - name: Mostrar mensaje de éxito
+      ansible.builtin.debug:
+        msg: "¡Ansible se ejecuto correctamente desde GitHub!"
