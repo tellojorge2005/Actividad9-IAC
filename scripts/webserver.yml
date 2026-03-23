@@ -2,9 +2,10 @@
 - name: "Configuracion de servidor"
   hosts: localhost
   connection: local
+  become: yes  
   tasks:
     - name: "Instalar Apache"
-      become: yes
       apt:
         name: apache2
         state: present
+        update_cache: yes
