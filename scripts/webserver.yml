@@ -1,7 +1,10 @@
 ---
-- name: Prueba de conexion de Ansible
+- name: "Configuracion de servidor"
   hosts: localhost
+  connection: local
   tasks:
-    - name: Mostrar mensaje de éxito
-      ansible.builtin.debug:
-        msg: "¡Ansible se ejecuto correctamente desde GitHub!"
+    - name: "Instalar Apache"
+      become: yes
+      apt:
+        name: apache2
+        state: present
